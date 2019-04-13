@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <script type="text/javascript">//<![CDATA[ 
+            window.onload=function(){
+            function speak() {
+                var msg = new SpeechSynthesisUtterance('Hello world');
+                msg.rate = 0.7;
+                msg.pitch = 1;
+                window.speechSynthesis.speak(msg);
+            }
+            }//]]>  
+            </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <table class="calc" border="2" cellspacing="20">
+        <tr class="heading">
+            <th colspan="5">CALCULATOR</th>
+        </tr>
+        <tr class="output">
+            <td id="ans" style="cursor:auto;" colspan="5">
+                <span id="out"></span>
+            </td>
+        </tr>
+        <tr>
+            <td onclick="fun('DEL')">DEL</td>
+            <td onclick="fun('AC')">AC</td>
+            <td onclick="fun('sign')">+/-</td>
+            <td value="=" onclick="fun('=')">=</td>
+            <td value="/" onclick="fun('/')" class="operations">/</td>
+        </tr>
+        <tr>
+            <td colspan="2" value="7" onclick="fun(7)">7</td>
+            <td value="8" onclick="fun(8)">8</td>
+            <td value="9" onclick="fun(9)">9</td>
+            <td value="*" onclick="fun('*')" class="operations">*</td>
+        </tr>
+        <tr>
+            <td colspan="2" value="4" onclick="fun(4)">4</td>
+            <td value="5" onclick="fun(5)">5</td>
+            <td value="6" onclick="fun(6)">6</td>
+            <td value="-" onclick="fun('-')" class="operations">-</td>
+        </tr>
+        <tr>
+            <td colspan="2" value="1" onclick="fun(1)">1</td>
+            <td value="2" onclick="fun(2)">2</td>
+            <td value="3" onclick="fun(3)">3</td>
+            <td value="+" onclick="fun('+')" class="operations">+</td>
+        </tr>
+        <tr>
+            <td value="0" onclick="fun(0)" colspan="3">0</td>
+            <td value="." onclick="fun('.')">.</td>
+            <td value="%" onclick="fun('%')" class="operations">%</td>
+        </tr>
+    </table>
+    <audio id="xyz" src="play.m4a" preload="auto"></audio>
+    <audio id="abc" src="beep.mp3" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+
+</html>
